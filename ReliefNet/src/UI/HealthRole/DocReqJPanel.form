@@ -5,6 +5,9 @@
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="6f" green="49" red="66" type="rgb"/>
     </Property>
+    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="66" green="0" red="66" type="rgb"/>
+    </Property>
   </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -31,7 +34,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="348" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="JM_lblpurpose" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="JM_lblpurpose" min="-2" max="-2" attributes="0"/>
                   <Component id="JM_lbldoctype" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="JM_lblcase" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="JM_lblnoofpat" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -39,7 +42,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="JM_jScrollPane1" alignment="0" pref="250" max="32767" attributes="0"/>
+                  <Component id="JM_jScrollPane1" pref="250" max="32767" attributes="0"/>
                   <Component id="JM_rbnewcheckup" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="JM_rbregcheckup" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="JM_txtnoofpat" alignment="0" max="32767" attributes="0"/>
@@ -47,7 +50,7 @@
                   <Component id="JM_cbdoctype" alignment="0" pref="250" max="32767" attributes="0"/>
                   <Component id="JM_btnreq" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="474" max="32767" attributes="0"/>
+              <EmptySpace pref="649" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -56,8 +59,8 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="JM_btnback" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="JM_lbltitle" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="JM_btnback" min="-2" max="-2" attributes="0"/>
+                  <Component id="JM_lbltitle" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -78,16 +81,16 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="JM_lblpattype" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
-                  <Component id="JM_cbpattype" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="JM_cbpattype" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="JM_jScrollPane1" alignment="0" min="-2" pref="123" max="-2" attributes="0"/>
-                  <Component id="JM_lblpurpose" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="JM_jScrollPane1" min="-2" pref="123" max="-2" attributes="0"/>
+                  <Component id="JM_lblpurpose" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Component id="JM_btnreq" min="-2" pref="37" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="229" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

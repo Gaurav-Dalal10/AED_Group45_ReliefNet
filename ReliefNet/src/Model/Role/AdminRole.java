@@ -5,6 +5,7 @@
 package Model.Role;
 
 import Model.EcoSystem;
+import Model.Enterprise.Enterprise;
 import Model.Network.Network;
 import Model.Organization.Organisation;
 import Model.UserAccount.UserAccount;

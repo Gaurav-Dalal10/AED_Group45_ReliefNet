@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package UI.SystemAdminRole;
 
@@ -20,17 +21,58 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Hp
+ * @author krishna
  */
 public class EnterpriseAdminPanel extends javax.swing.JPanel {
 
+    private JPanel userProcessContainer;
+    private EcoSystem system;
     /**
      * Creates new form EnterpriseAdminPanel
      */
-    public EnterpriseAdminPanel() {
+    public EnterpriseAdminPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
+
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+
+        autoPopEntAdmin();
+        autoPopNetworkCb();
+    }
+    
+    private void autoPopEntAdmin() {
+        DefaultTableModel mdl = (DefaultTableModel) tblEntAdmin.getModel();
+
+        mdl.setRowCount(0);
+        for (Network net : system.getNetList()) {
+            for (Enterprise ent : net.getEntDir().getEntList()) {
+                for (UserAccount ua : ent.getUserAccDir().getUserAccList()) {
+                    Object[] row = new Object[3];
+                    row[0] = ent.getName();
+                    row[1] = net.getName();
+                    row[2] = ua.getUname();
+
+                    mdl.addRow(row);
+                }
+            }
+        }
     }
 
+    private void autoPopNetworkCb(){
+        JM_cbEntAdmNet.removeAllItems();
+        
+        for (Network net : system.getNetList()){
+            JM_cbEntAdmNet.addItem(net);
+        }
+    }
+    
+    private void autoPopulateEntCb(Network net){
+        JM_cbEnt.removeAllItems();
+        for (Enterprise ent : net.getEntDir().getEntList()){
+            JM_cbEnt.addItem(ent);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,7 +82,6 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         JM_jLabel4 = new javax.swing.JLabel();
         JM_txEntAdmName = new javax.swing.JTextField();
         JM_jScrollPane1 = new javax.swing.JScrollPane();
@@ -57,7 +98,7 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
         JM_cbEnt = new javax.swing.JComboBox();
         JM_btnEntAdmAdd = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(102, 73, 111));
+        setBackground(new java.awt.Color(102, 73, 111));
 
         JM_jLabel4.setFont(new java.awt.Font(".SF NS Mono", 1, 14)); // NOI18N
         JM_jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -154,94 +195,73 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JM_jLabel3)
                     .addComponent(JM_jLabel1)
                     .addComponent(JM_jLabel2)
                     .addComponent(JM_jLabel4)
                     .addComponent(JM_jLabel5))
                 .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JM_cbEnt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JM_cbEntAdmNet, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JM_txtEntAdmUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JM_txtEntAdmPwd, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JM_txEntAdmName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(243, 243, 243))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(239, 239, 239)
                         .addComponent(JM_btnEntAdmAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(JM_btnBack)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JM_jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JM_jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
                 .addGap(3, 3, 3)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JM_btnBack)
                     .addComponent(JM_jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(71, 71, 71)
                 .addComponent(JM_jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JM_jLabel1)
                     .addComponent(JM_cbEntAdmNet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JM_jLabel3)
                     .addComponent(JM_cbEnt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JM_jLabel2)
                     .addComponent(JM_txtEntAdmUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JM_jLabel4)
                     .addComponent(JM_txtEntAdmPwd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JM_jLabel5)
                     .addComponent(JM_txEntAdmName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JM_btnEntAdmAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(48, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 792, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 606, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -261,8 +281,15 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
         if (net != null){
             autoPopulateEntCb(net);
         }
+
     }//GEN-LAST:event_JM_cbEntAdmNetActionPerformed
 
+    private boolean checkPassword(String input){
+        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[$#&])[A-Za-z\\d$#*&]{6,}$");
+        Matcher matcher = pattern.matcher(input);
+        return matcher.matches();
+    }
+    
     private void JM_btnEntAdmAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_btnEntAdmAddActionPerformed
 
         Enterprise ent = (Enterprise) JM_cbEnt.getSelectedItem();
@@ -292,6 +319,7 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
         JM_txtEntAdmUsername.setText("");
         JM_txtEntAdmPwd.setText("");
         JM_txEntAdmName.setText("");
+
     }//GEN-LAST:event_JM_btnEntAdmAddActionPerformed
 
 
@@ -310,7 +338,6 @@ public class EnterpriseAdminPanel extends javax.swing.JPanel {
     private javax.swing.JTextField JM_txEntAdmName;
     private javax.swing.JPasswordField JM_txtEntAdmPwd;
     private javax.swing.JTextField JM_txtEntAdmUsername;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JTable tblEntAdmin;
     // End of variables declaration//GEN-END:variables
 }

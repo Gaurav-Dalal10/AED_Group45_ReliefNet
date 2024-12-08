@@ -90,7 +90,7 @@ public class TutorPanel extends javax.swing.JPanel {
 
         JM_btnViewReqDetail.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
         JM_btnViewReqDetail.setForeground(new java.awt.Color(0, 153, 153));
-        JM_btnViewReqDetail.setText("View Task Details");
+        JM_btnViewReqDetail.setText("View Request Details");
         JM_btnViewReqDetail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JM_btnViewReqDetailActionPerformed(evt);
@@ -99,7 +99,7 @@ public class TutorPanel extends javax.swing.JPanel {
 
         JM_btnNewReq.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
         JM_btnNewReq.setForeground(new java.awt.Color(0, 153, 153));
-        JM_btnNewReq.setText("Add New Task");
+        JM_btnNewReq.setText("Create New Request");
         JM_btnNewReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JM_btnNewReqActionPerformed(evt);
@@ -116,7 +116,7 @@ public class TutorPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Task Title", "Date", "Time", "No. of Volunteers", "Open Spots", "Status"
+                "Job Title", "Date", "Time", "No. of Volunteers", "Vacancy", "Status"
             }
         ) {
             Class[] types = new Class [] {
@@ -149,7 +149,7 @@ public class TutorPanel extends javax.swing.JPanel {
         JM_jLabel1.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
         JM_jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JM_jLabel1.setText("Shelter Panel");
+        JM_jLabel1.setText("Tutor Panel");
 
         JM_btnVolList.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
         JM_btnVolList.setForeground(new java.awt.Color(0, 153, 153));
@@ -162,7 +162,7 @@ public class TutorPanel extends javax.swing.JPanel {
 
         JM_btnDeleteReq.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
         JM_btnDeleteReq.setForeground(new java.awt.Color(0, 153, 153));
-        JM_btnDeleteReq.setText("Delete Task");
+        JM_btnDeleteReq.setText("Delete Request");
         JM_btnDeleteReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JM_btnDeleteReqActionPerformed(evt);
