@@ -26,19 +26,281 @@ public class DocReqJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JM_lblnoofpat = new javax.swing.JLabel();
+        JM_txtnoofpat = new javax.swing.JTextField();
+        JM_btnreq = new javax.swing.JButton();
+        JM_btnback = new javax.swing.JButton();
+        JM_lblpurpose = new javax.swing.JLabel();
+        JM_lblpattype = new javax.swing.JLabel();
+        JM_lblcase = new javax.swing.JLabel();
+        JM_lbldoctype = new javax.swing.JLabel();
+        JM_rbnewcheckup = new javax.swing.JRadioButton();
+        JM_rbregcheckup = new javax.swing.JRadioButton();
+        JM_cbpattype = new javax.swing.JComboBox();
+        JM_cbdoctype = new javax.swing.JComboBox();
+        JM_jScrollPane1 = new javax.swing.JScrollPane();
+        JM_txtpur = new javax.swing.JTextArea();
+        JM_lbltitle = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(102, 73, 111));
+
+        JM_lblnoofpat.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
+        JM_lblnoofpat.setForeground(new java.awt.Color(255, 255, 255));
+        JM_lblnoofpat.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        JM_lblnoofpat.setText("Number of Patients:");
+
+        JM_txtnoofpat.setBackground(new java.awt.Color(204, 204, 204));
+        JM_txtnoofpat.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
+        JM_txtnoofpat.setForeground(new java.awt.Color(102, 0, 102));
+
+        JM_btnreq.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
+        JM_btnreq.setForeground(new java.awt.Color(102, 73, 111));
+        JM_btnreq.setText("REQUEST");
+        JM_btnreq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JM_btnreqActionPerformed(evt);
+            }
+        });
+
+        JM_btnback.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
+        JM_btnback.setForeground(new java.awt.Color(102, 73, 111));
+        JM_btnback.setText("<<Back");
+        JM_btnback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JM_btnbackActionPerformed(evt);
+            }
+        });
+
+        JM_lblpurpose.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
+        JM_lblpurpose.setForeground(new java.awt.Color(255, 255, 255));
+        JM_lblpurpose.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        JM_lblpurpose.setText("Purpose:");
+
+        JM_lblpattype.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
+        JM_lblpattype.setForeground(new java.awt.Color(255, 255, 255));
+        JM_lblpattype.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        JM_lblpattype.setText("Patients Type:");
+
+        JM_lblcase.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
+        JM_lblcase.setForeground(new java.awt.Color(255, 255, 255));
+        JM_lblcase.setText("Case:");
+
+        JM_lbldoctype.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
+        JM_lbldoctype.setForeground(new java.awt.Color(255, 255, 255));
+        JM_lbldoctype.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        JM_lbldoctype.setText("Doctor Type :");
+
+        JM_rbnewcheckup.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
+        JM_rbnewcheckup.setForeground(new java.awt.Color(255, 255, 255));
+        JM_rbnewcheckup.setText("New Checkup");
+
+        JM_rbregcheckup.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
+        JM_rbregcheckup.setForeground(new java.awt.Color(255, 255, 255));
+        JM_rbregcheckup.setSelected(true);
+        JM_rbregcheckup.setText("Regular Checkup");
+        JM_rbregcheckup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JM_rbregcheckupActionPerformed(evt);
+            }
+        });
+
+        JM_cbpattype.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
+        JM_cbpattype.setForeground(new java.awt.Color(102, 73, 111));
+        JM_cbpattype.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Child", "Adult", "Old", "Mix" }));
+
+        JM_cbdoctype.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
+        JM_cbdoctype.setForeground(new java.awt.Color(102, 73, 111));
+        JM_cbdoctype.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "General Physician", "Pediatrician", "Cardiologist", "Urologist", "Psychiatrist", "Ophthalmologist", "Orthopedist", "Dermatologist" }));
+
+        JM_txtpur.setBackground(new java.awt.Color(204, 204, 204));
+        JM_txtpur.setColumns(20);
+        JM_txtpur.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
+        JM_txtpur.setForeground(new java.awt.Color(102, 0, 102));
+        JM_txtpur.setRows(5);
+        JM_jScrollPane1.setViewportView(JM_txtpur);
+
+        JM_lbltitle.setBackground(new java.awt.Color(255, 255, 255));
+        JM_lbltitle.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
+        JM_lbltitle.setForeground(new java.awt.Color(255, 255, 255));
+        JM_lbltitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JM_lbltitle.setText("New Doctor Request");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(JM_btnback)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JM_lbltitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(150, 150, 150))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(348, 348, 348)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(JM_lblpurpose)
+                    .addComponent(JM_lbldoctype)
+                    .addComponent(JM_lblcase)
+                    .addComponent(JM_lblnoofpat)
+                    .addComponent(JM_lblpattype))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(JM_jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addComponent(JM_rbnewcheckup)
+                    .addComponent(JM_rbregcheckup)
+                    .addComponent(JM_txtnoofpat)
+                    .addComponent(JM_cbpattype, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JM_cbdoctype, 0, 250, Short.MAX_VALUE)
+                    .addComponent(JM_btnreq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(474, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JM_btnback)
+                    .addComponent(JM_lbltitle))
+                .addGap(103, 103, 103)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JM_cbdoctype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JM_lbldoctype))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JM_lblcase)
+                    .addComponent(JM_rbnewcheckup))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(JM_rbregcheckup)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JM_lblnoofpat, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JM_txtnoofpat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JM_lblpattype, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JM_cbpattype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JM_jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JM_lblpurpose))
+                .addGap(42, 42, 42)
+                .addComponent(JM_btnreq, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void JM_btnreqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_btnreqActionPerformed
+        HospitalDoctorWorkReq req = new HospitalDoctorWorkReq();
+        String doctype = (String)JM_cbdoctype.getSelectedItem();
+        if(doctype == null || doctype.equals("")){
+            JOptionPane.showMessageDialog(null, "Doctor Type can't be empty!");
+            return;
+        }
+        req.setDocType(doctype);
+
+        String type = JM_txtnoofpat.getText();
+        if(type == null || type.equals("")){
+            JOptionPane.showMessageDialog(null, "Number of Patients cannot be empty!");
+            return;
+        }
+        try {
+            Integer.parseInt(type);
+        } catch (NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Enter a valid number for Number Of Patients.");
+            return;
+        }
+
+        Integer totalpat = Integer.parseInt(type);
+        if(totalpat<=0)
+        {
+            JOptionPane.showMessageDialog(null, "Number of patients should not be less than or equal to zero");
+            return;
+        }
+        req.setNoOfPatients(totalpat);
+
+        String msg = JM_txtpur.getText();
+        if(msg == null || msg.equals("")){
+            JOptionPane.showMessageDialog(null, "Purpose cannot be empty");
+            return;
+        }
+        req.setMessage(msg);
+
+        String pattype=(String)JM_cbpattype.getSelectedItem();
+        if(pattype == null || pattype.equals("")){
+            JOptionPane.showMessageDialog(null, "Patient Type cannot be empty");
+            return;
+        }
+        req.setPatientType(pattype);
+        String patcase;
+        if(JM_rbnewcheckup.isSelected())
+        {
+            patcase="New Checkup";
+        }
+        else
+        {
+            patcase="Regular Checkup";
+        }
+        req.setCaseType(patcase);
+        req.setSender(ua);
+        req.setStatus("Sent");
+
+        Organisation org = null;
+
+        for(Enterprise e: net.getEntDir().getEntList())
+        {
+            if(e.getEntType().equals(e.getEntType().Hospital))
+            {
+                for (Organisation organization : e.getOrgDir().getOrgList())
+                {
+                    if (organization instanceof DoctorOrg){
+                        org = organization;
+                        org.getWorkQueue().getWrList().add(req);
+                    }
+                }
+            }
+        }
+        if (org!=null){
+            ua.getWorkQueue().getWrList().add(req);
+        }
+
+        JOptionPane.showMessageDialog(null, "Successfully Sent Doctor Request");
+        JM_cbdoctype.setSelectedIndex(0);
+        JM_txtnoofpat.setText("");
+        JM_txtpur.setText("");
+        JM_cbpattype.setSelectedIndex(0);
+        JM_rbnewcheckup.setSelected(true);
+    }//GEN-LAST:event_JM_btnreqActionPerformed
+
+    private void JM_btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_btnbackActionPerformed
+
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        DoctorWorkAreaJPanel dwjp = (DoctorWorkAreaJPanel) component;
+        dwjp.autoPopReqTbl();
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_JM_btnbackActionPerformed
+
+    private void JM_rbregcheckupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_rbregcheckupActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JM_rbregcheckupActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JM_btnback;
+    private javax.swing.JButton JM_btnreq;
+    private javax.swing.JComboBox JM_cbdoctype;
+    private javax.swing.JComboBox JM_cbpattype;
+    private javax.swing.JScrollPane JM_jScrollPane1;
+    private javax.swing.JLabel JM_lblcase;
+    private javax.swing.JLabel JM_lbldoctype;
+    private javax.swing.JLabel JM_lblnoofpat;
+    private javax.swing.JLabel JM_lblpattype;
+    private javax.swing.JLabel JM_lblpurpose;
+    private javax.swing.JLabel JM_lbltitle;
+    private javax.swing.JRadioButton JM_rbnewcheckup;
+    private javax.swing.JRadioButton JM_rbregcheckup;
+    private javax.swing.JTextField JM_txtnoofpat;
+    private javax.swing.JTextArea JM_txtpur;
     // End of variables declaration//GEN-END:variables
 }
