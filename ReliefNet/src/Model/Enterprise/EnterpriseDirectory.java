@@ -28,21 +28,21 @@ public class EnterpriseDirectory {
     public Enterprise createEnt(String name, Enterprise.EntType type){
         Enterprise ent=null;
         
-        if(type==Enterprise.EntType.MedicalCenter){
-            ent=new MedicalCenterEnterprise(name);
+        if(type==Enterprise.EntType.Hospital){
+            ent=new HospitalEnterprise(name);
             entList.add(ent);
         }
-        if(type==Enterprise.EntType.EmergencyShelter){
-            ent=new EmergencyShelterEnterprise(name);
+        if(type==Enterprise.EntType.NGO){
+            ent=new NGOEnterprise(name);
             entList.add(ent);
         }
-        if(type==Enterprise.EntType.Clothing){
-            ent=new ClothingEnterprise(name);
+        if(type==Enterprise.EntType.Transpotation){
+            ent=new TransportationEnterprise(name);
             entList.add(ent);
         }
 
-        if(type==Enterprise.EntType.FoodBank){
-            ent = new FoodBankEnterprise(name);
+        if(type==Enterprise.EntType.Resturant){
+            ent = new ResturantEnterprise(name);
             entList.add(ent);
         }
         return ent;
