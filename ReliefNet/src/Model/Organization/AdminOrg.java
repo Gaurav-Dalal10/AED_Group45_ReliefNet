@@ -1,13 +1,27 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package Model.Organization;
 
+import Model.Role.AdminRole;
+import Model.Role.Role;
+import java.util.ArrayList;
 /**
  *
- * @author Hp
+ * @author Mrinalini
  */
-public class AdminOrg {
+public class AdminOrg extends Organisation{
     
+    public AdminOrg() {
+        super(Type.Admin.getOrgType());
+    }
+    
+    @Override
+    public ArrayList<Role> getRoleList() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new AdminRole());
+        return roles;
+    }
 }
