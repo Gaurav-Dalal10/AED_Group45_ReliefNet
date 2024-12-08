@@ -11,5 +11,5 @@ package Model;
  */
 public class Config {
     
-    
+    System.out.println("NEU AED");
 }
