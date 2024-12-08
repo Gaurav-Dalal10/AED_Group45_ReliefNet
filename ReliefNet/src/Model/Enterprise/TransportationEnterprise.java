@@ -8,13 +8,12 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Hp
- *
+ * @author gaura
  */
-public class MedicalCenterEnterprise extends Enterprise{
+public class TransportationEnterprise extends Enterprise{
     
     public enum Type{
-       Doctor("Doctor Organization"), Pharmacy("Pharmacy Organization");
+       Transport("Transport Organization");
         private String type;
 
         public String getType() {
@@ -24,13 +23,14 @@ public class MedicalCenterEnterprise extends Enterprise{
         private Type(String type) {
             this.type = type;
         }
+
     }
-    public MedicalCenterEnterprise(String name){
-        super(name,Enterprise.EntType.MedicalCenter);
+    
+    public TransportationEnterprise(String name){
+        super(name, Enterprise.EntType.Transpotation);
     }
     @Override
     public ArrayList<Role> getRoleList() {
         return null;
     }
 }
-
