@@ -80,7 +80,7 @@ public class TransportorPanel extends javax.swing.JPanel {
 
         JM_btnOrders.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         JM_btnOrders.setForeground(new java.awt.Color(0, 153, 153));
-        JM_btnOrders.setText("Supply Requests");
+        JM_btnOrders.setText("My Orders");
         JM_btnOrders.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JM_btnOrdersActionPerformed(evt);
@@ -90,34 +90,37 @@ public class TransportorPanel extends javax.swing.JPanel {
         JM_jLabel1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
         JM_jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JM_jLabel1.setText("Clothing Supplies Manager Panel");
+        JM_jLabel1.setText("Transport Panel");
 
-        JM_jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/SuppliesManagerRole/home.png"))); // NOI18N
+        JM_jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/TransportorRole/home.png"))); // NOI18N
 
-        JM_jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/SuppliesManagerRole/orders.png"))); // NOI18N
+        JM_jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/TransportorRole/orders.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 467, Short.MAX_VALUE)
+                .addGap(364, 364, 364)
+                .addComponent(JM_jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(433, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(JM_btnHomePage, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JM_jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(213, 213, 213)
+                .addGap(240, 240, 240)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JM_btnOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JM_jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(399, 399, 399))
-            .addComponent(JM_jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(93, 93, 93)
                 .addComponent(JM_jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(JM_jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(JM_jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE))

@@ -259,6 +259,11 @@ public class PharmacyReqJPanel extends javax.swing.JPanel {
         JM_txtpin.setBackground(new java.awt.Color(204, 204, 204));
         JM_txtpin.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
         JM_txtpin.setForeground(new java.awt.Color(102, 0, 102));
+        JM_txtpin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JM_txtpinActionPerformed(evt);
+            }
+        });
 
         JM_lbltitle.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
         JM_lbltitle.setForeground(new java.awt.Color(255, 255, 255));
@@ -415,7 +420,7 @@ public class PharmacyReqJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
  private boolean checkPin(String phoneNumber) {
-        Pattern pat = Pattern.compile("^[0-9]{6}$");
+        Pattern pat = Pattern.compile("^[0-9]{5}$");
         Matcher mat = pat.matcher(phoneNumber);
         return mat.matches();
     }
@@ -664,6 +669,10 @@ public class PharmacyReqJPanel extends javax.swing.JPanel {
     private void JM_txtconnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_txtconnoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JM_txtconnoActionPerformed
+
+    private void JM_txtpinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_txtpinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JM_txtpinActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

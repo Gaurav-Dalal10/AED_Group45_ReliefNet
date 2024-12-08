@@ -1,22 +1,162 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package UI.RestaurantRole;
 
+import UI.RestaurantRole.*;
+import Model.EcoSystem;
+import Model.FoodCare;
+import Model.Enterprise.Enterprise;
+import Model.Network.Network;
+import Model.Organization.RestaurantOrg;
+import Model.Organization.Organisation;
+import Model.Organization.TransportOrg;
+import Model.UserAccount.UserAccount;
+import Model.WorkQueue.VolunteerRestaurantWorkRequest;
+import Model.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
- * @author Hp
+ * @author Mrinalini
  */
 public class DeliveryPanel extends javax.swing.JPanel {
 
+    private JPanel userProcessContainer;
+    private RestaurantOrg org;
+    private Enterprise ent;
+    private UserAccount ua;
+    private Network net;
     /**
      * Creates new form DeliveryPanel
      */
-    public DeliveryPanel() {
-        initComponents();
+    public DeliveryPanel(JPanel userProcessContainer, UserAccount acc, RestaurantOrg org,Network net, Enterprise ent) {
+                initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.org = (RestaurantOrg)org;
+        this.ent = ent;
+        this.ua = acc;
+        this.net=net;
+        autoPopDelivery();
+    }
+    
+    public void autoPopDelivery() {
+        DefaultTableModel mdl = (DefaultTableModel)tblMedDelivery.getModel();
+        mdl.setRowCount(0);    
+        for (Iterator<WorkRequest> wr = org.getWorkQueue().getWrList().iterator(); wr.hasNext();) {
+            WorkRequest workRequest = wr.next();
+           if(workRequest instanceof VolunteerRestaurantWorkRequest){
+               VolunteerRestaurantWorkRequest req = (VolunteerRestaurantWorkRequest) workRequest;
+                if(req.getStatus().equalsIgnoreCase("Delivery Requested") || req.getStatus().equalsIgnoreCase("Accepted") || req.getStatus().equalsIgnoreCase("Delivered") || req.getStatus().equalsIgnoreCase("Delivery Assigned") )
+                {
+                Object[] row = new Object[7];
+                row[0] = req;
+                row[1]=req.getNgoName();
+                row[3]=req.getQuantity();
+                row[2]=req.getSender();
+                row[4] = req.getReqDate();
+                row[5]=req.getStatus();
+                row[6]=req.getFoodList();
+                mdl.addRow(row);
+                }
+               
+           }
+            
+            
+        }
     }
 
+    public void autoPopReq() {
+        DefaultTableModel mdl = (DefaultTableModel)tblMedDelivery.getModel();
+        mdl.setRowCount(0);            
+        for (Iterator<WorkRequest> wr = org.getWorkQueue().getWrList().iterator(); wr.hasNext();) {
+            WorkRequest workRequest = wr.next();
+           if(workRequest instanceof VolunteerRestaurantWorkRequest){
+               VolunteerRestaurantWorkRequest req = (VolunteerRestaurantWorkRequest) workRequest;
+                if(req.getStatus().equalsIgnoreCase("Delivery Requested") )
+                {
+               Object[] row = new Object[7];
+                row[0] = req;
+                row[1]=req.getNgoName();
+                row[3]=req.getQuantity();
+                row[2]=req.getSender();
+                row[4] = req.getReqDate();
+                row[5]=req.getStatus();
+                row[6]=req.getFoodList();
+                mdl.addRow(row);
+                }
+           }
+            
+            
+        }
+    }
+    
+    public void autoPopUnReq() {
+        DefaultTableModel mdl = (DefaultTableModel)tblMedDelivery.getModel();
+        mdl.setRowCount(0);    
+        
+        
+        for (Iterator<WorkRequest> wr = org.getWorkQueue().getWrList().iterator(); wr.hasNext();) {
+            WorkRequest workRequest = wr.next();
+           if(workRequest instanceof VolunteerRestaurantWorkRequest){
+               VolunteerRestaurantWorkRequest req = (VolunteerRestaurantWorkRequest) workRequest;
+                if(req.getStatus().equalsIgnoreCase("Accepted") )
+                {
+               Object[] row = new Object[7];
+                row[0] = req;
+                row[1]=req.getNgoName();
+                row[3]=req.getQuantity();
+                row[2]=req.getSender();
+                row[4] = req.getReqDate();
+                row[5]=req.getStatus();
+                row[6]=req.getFoodList();
+                mdl.addRow(row);
+                }
+               
+           }
+            
+            
+        }
+    }
+    
+    public void autoPopDelivered() {
+        DefaultTableModel mdl = (DefaultTableModel)tblMedDelivery.getModel();
+        mdl.setRowCount(0);    
+        for (Iterator<WorkRequest> wr = org.getWorkQueue().getWrList().iterator(); wr.hasNext();) {
+            WorkRequest workRequest = wr.next();
+           if(workRequest instanceof VolunteerRestaurantWorkRequest){
+               VolunteerRestaurantWorkRequest req = (VolunteerRestaurantWorkRequest) workRequest;
+                if(req.getStatus().equalsIgnoreCase("Delivered") )
+                {
+                Object[] row = new Object[7];
+                row[0] = req;
+                row[1]=req.getNgoName();
+                row[3]=req.getQuantity();
+                row[2]=req.getSender();
+                row[4] = req.getReqDate();
+                row[5]=req.getStatus();
+                row[6]=req.getFoodList();
+                mdl.addRow(row);
+                }
+           }
+        }
+    }
+    
+    private boolean checkPhoneNumber(String phNo) {
+        Pattern pattern = Pattern.compile("^[0-9]{10}$");
+        Matcher matcher = pattern.matcher(phNo);
+        return matcher.matches();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -65,7 +205,7 @@ public class DeliveryPanel extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Request ID", "NGO", "Sender", "Medicine List", "Status"
+                "ID", "NGO", "Sender", "Medicine List", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -134,6 +274,10 @@ public class DeliveryPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(286, 286, 286))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(88, 88, 88)
@@ -146,7 +290,7 @@ public class DeliveryPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                                     .addComponent(txtContactNo))
-                                .addGap(206, 206, 206)
+                                .addGap(215, 215, 215)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel13)
                                     .addComponent(cbFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -157,15 +301,14 @@ public class DeliveryPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(402, 402, 402)
                         .addComponent(btnReqDelivery, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(291, Short.MAX_VALUE))
-            .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(336, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(48, 48, 48)
                 .addComponent(jLabel26)
-                .addGap(50, 50, 50)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(refreshBtn2)
@@ -185,7 +328,7 @@ public class DeliveryPanel extends javax.swing.JPanel {
                     .addComponent(txtContactNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
                 .addComponent(btnReqDelivery, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

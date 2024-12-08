@@ -4,6 +4,9 @@
  */
 package Model.Enterprise;
 
+import Model.Organization.Organisation;
+import Model.Organization.OrganisationDirectory;
+
 /**
  *
  * @author gaura
