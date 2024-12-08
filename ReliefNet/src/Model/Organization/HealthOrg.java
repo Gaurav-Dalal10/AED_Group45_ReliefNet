@@ -5,23 +5,22 @@
  */
 package Model.Organization;
 
-import Model.Role.AdminRole;
+import Model.Role.HealthRole;
 import Model.Role.Role;
 import java.util.ArrayList;
 /**
  *
  * @author Mrinalini
  */
-public class AdminOrg extends Organisation{
-    
-    public AdminOrg() {
-        super(Type.Admin.getOrgType());
+public class HealthOrg extends Organisation{
+    public HealthOrg() {
+        super(Organisation.Type.Health.getOrgType());
     }
     
     @Override
     public ArrayList<Role> getRoleList() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new AdminRole());
+        roles.add(new HealthRole());
         return roles;
     }
 }
