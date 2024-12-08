@@ -27,9 +27,9 @@ public abstract class Enterprise extends Organisation{
     
     public enum EntType{
         MedicalCenter("MedicalCenter"), 
-        EmergencyShelter("EmergencyShelter"),
-        Clothing("Clothing"),
-        FoodBank("FoodBank");
+        EmergencyShelter("EmergencyShelter"), 
+        Clothing("Clothing"), 
+        FoodBank("FoodBank"); 
         
         private String type;
 
