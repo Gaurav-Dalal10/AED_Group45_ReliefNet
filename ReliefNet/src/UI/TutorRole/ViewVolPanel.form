@@ -309,7 +309,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Volunteers Details"/>
+        <Property name="text" type="java.lang.String" value="Volunteer Details"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="JM_txtAge">
@@ -437,6 +437,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Email Checking"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JM_chbEmailActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="JM_chbWeb">
       <Properties>
@@ -643,7 +646,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Helper Skills"/>
+        <Property name="text" type="java.lang.String" value="Education"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="JM_jLabel5">

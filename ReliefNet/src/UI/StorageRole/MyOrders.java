@@ -118,6 +118,7 @@ public class MyOrders extends javax.swing.JPanel {
         tblOrderHistory = new javax.swing.JTable();
         JM_jScrollPane9 = new javax.swing.JScrollPane();
         tblOrdDetails = new javax.swing.JTable();
+        JM_btnback = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(102, 73, 111));
 
@@ -179,11 +180,24 @@ public class MyOrders extends javax.swing.JPanel {
         });
         JM_jScrollPane9.setViewportView(tblOrdDetails);
 
+        JM_btnback.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
+        JM_btnback.setForeground(new java.awt.Color(102, 73, 111));
+        JM_btnback.setText("<< Back");
+        JM_btnback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JM_btnbackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JM_jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(JM_btnback)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JM_jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 1276, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(84, 84, 84)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,8 +213,10 @@ public class MyOrders extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(JM_jLabel7)
-                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JM_jLabel7)
+                    .addComponent(JM_btnback))
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JM_jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JM_jLabel3))
@@ -225,8 +241,16 @@ public class MyOrders extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_tblOrderHistoryMouseClicked
 
+    private void JM_btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_btnbackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        java.awt.CardLayout layout = (java.awt.CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_JM_btnbackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JM_btnback;
     private javax.swing.JLabel JM_jLabel3;
     private javax.swing.JLabel JM_jLabel4;
     private javax.swing.JLabel JM_jLabel7;

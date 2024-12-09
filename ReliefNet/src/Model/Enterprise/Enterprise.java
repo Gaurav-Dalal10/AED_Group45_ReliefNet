@@ -30,10 +30,10 @@ public abstract class Enterprise extends Organisation{
     
     public enum EntType{
 
-        Hospital("MedicalCenter"), 
-        NGO("EmergencyShelter"),
-        Transpotation("Clothing"),
-        Resturant("FoodBank");
+        Hospital("Hospital"), 
+        NGO("NGO"),
+        Transpotation("Transportation"),
+        Resturant("Restaurant");
 
         
         private String type;

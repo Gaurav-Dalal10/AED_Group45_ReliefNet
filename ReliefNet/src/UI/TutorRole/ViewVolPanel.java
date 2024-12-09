@@ -216,7 +216,7 @@ public class ViewVolPanel extends javax.swing.JPanel {
         JM_jLabel10.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
         JM_jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JM_jLabel10.setText("Volunteers Details");
+        JM_jLabel10.setText("Volunteer Details");
 
         JM_txtAge.setEditable(false);
         JM_txtAge.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
@@ -289,6 +289,11 @@ public class ViewVolPanel extends javax.swing.JPanel {
         JM_chbEmail.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
         JM_chbEmail.setForeground(new java.awt.Color(255, 255, 255));
         JM_chbEmail.setText("Email Checking");
+        JM_chbEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JM_chbEmailActionPerformed(evt);
+            }
+        });
 
         JM_chbWeb.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
         JM_chbWeb.setForeground(new java.awt.Color(255, 255, 255));
@@ -382,7 +387,7 @@ public class ViewVolPanel extends javax.swing.JPanel {
 
         JM_jLabel11.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
         JM_jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        JM_jLabel11.setText("Helper Skills");
+        JM_jLabel11.setText("Education");
 
         JM_jLabel5.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
         JM_jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -653,6 +658,10 @@ public class ViewVolPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_JM_btnBackActionPerformed
+
+    private void JM_chbEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_chbEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JM_chbEmailActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

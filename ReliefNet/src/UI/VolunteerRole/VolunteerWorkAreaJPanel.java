@@ -683,7 +683,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
 
         JM_VolunteerJTabbedPane.addTab("Home Page", JM_HomePageJPanel);
 
-        JM_TasksJPanel.setBackground(new java.awt.Color(0, 153, 153));
+        JM_TasksJPanel.setBackground(new java.awt.Color(102, 73, 111));
 
         JM_numberOfVolunteersJTextField.setEditable(false);
         JM_numberOfVolunteersJTextField.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
@@ -783,7 +783,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         JM_numberOfStudentsJTextField.setForeground(new java.awt.Color(102, 0, 102));
 
         JM_btnNewRefresh.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnNewRefresh.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnNewRefresh.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnNewRefresh.setText("Refresh");
         JM_btnNewRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -798,7 +798,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         JM_jScrollPane4.setViewportView(requirementsJTextArea1);
 
         JM_btnAssignToMe.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnAssignToMe.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnAssignToMe.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnAssignToMe.setText("Assign to me");
         JM_btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -914,8 +914,8 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
 
         JM_VolunteerJTabbedPane.addTab("New Tasks", JM_TasksJPanel);
 
-        JM_DonateJPanel.setBackground(new java.awt.Color(0, 153, 153));
-        JM_DonateJPanel.setForeground(new java.awt.Color(255, 255, 255));
+        JM_DonateJPanel.setBackground(new java.awt.Color(102, 73, 111));
+        JM_DonateJPanel.setForeground(new java.awt.Color(102, 73, 111));
         JM_DonateJPanel.setPreferredSize(new java.awt.Dimension(3043, 1021));
 
         JM_txtQuantity.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
@@ -942,7 +942,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         JM_jScrollPane5.setViewportView(tblDonateReq);
 
         JM_btnAdd.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnAdd.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnAdd.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnAdd.setText("Add");
         JM_btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -951,7 +951,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         JM_btnDelete.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnDelete.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnDelete.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnDelete.setText("Delete");
         JM_btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -960,7 +960,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         });
 
         JM_btnModify.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnModify.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnModify.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnModify.setText("Modify");
         JM_btnModify.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -988,7 +988,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         JM_jScrollPane6.setViewportView(txtAddress);
 
         JM_btnDonate.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnDonate.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnDonate.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnDonate.setText("DONATE");
         JM_btnDonate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1010,7 +1010,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         JM_jScrollPane7.setViewportView(txtDescription);
 
         JM_btnUpdate.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnUpdate.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnUpdate.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnUpdate.setText("Update");
         JM_btnUpdate.setEnabled(false);
         JM_btnUpdate.addActionListener(new java.awt.event.ActionListener() {

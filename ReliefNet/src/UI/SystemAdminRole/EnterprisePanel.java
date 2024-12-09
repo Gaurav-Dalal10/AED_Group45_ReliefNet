@@ -91,11 +91,6 @@ public class EnterprisePanel extends javax.swing.JPanel {
 
         JM_cbEntNetwork.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
         JM_cbEntNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        JM_cbEntNetwork.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JM_cbEntNetworkActionPerformed(evt);
-            }
-        });
 
         JM_jLabel2.setFont(new java.awt.Font(".SF NS Mono", 1, 14)); // NOI18N
         JM_jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -109,11 +104,6 @@ public class EnterprisePanel extends javax.swing.JPanel {
 
         JM_cbEntType.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
         JM_cbEntType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        JM_cbEntType.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JM_cbEntTypeActionPerformed(evt);
-            }
-        });
 
         JM_btnEntAdd.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
         JM_btnEntAdd.setForeground(new java.awt.Color(102, 73, 111));
@@ -286,14 +276,6 @@ public class EnterprisePanel extends javax.swing.JPanel {
             autoPopEnt();
         }
     }//GEN-LAST:event_JM_btnEnterpriseDeleteActionPerformed
-
-    private void JM_cbEntTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_cbEntTypeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JM_cbEntTypeActionPerformed
-
-    private void JM_cbEntNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_cbEntNetworkActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JM_cbEntNetworkActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

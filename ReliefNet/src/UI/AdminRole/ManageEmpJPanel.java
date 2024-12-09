@@ -9,6 +9,7 @@ import Model.Employee.Employee;
 import Model.Organization.Organisation;
 import Model.Organization.OrganisationDirectory;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,6 +25,7 @@ public class ManageEmpJPanel extends javax.swing.JPanel {
      */
     private OrganisationDirectory orgDir;
     private JPanel userProcessContainer;
+    private Organisation org;
     
     public ManageEmpJPanel(JPanel userProcessContainer,OrganisationDirectory orgDir) {
         initComponents();
@@ -76,6 +78,7 @@ public class ManageEmpJPanel extends javax.swing.JPanel {
         JM_CbOrg = new javax.swing.JComboBox();
         JM_LblOrg = new javax.swing.JLabel();
         JM_lbltitle = new javax.swing.JLabel();
+        JM_btnNetworkDelete = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(51, 0, 51));
@@ -116,7 +119,7 @@ public class ManageEmpJPanel extends javax.swing.JPanel {
 
         JM_btncreate.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
         JM_btncreate.setForeground(new java.awt.Color(102, 73, 111));
-        JM_btncreate.setText("Create Employee");
+        JM_btncreate.setText("CREATE EMPLOYEE");
         JM_btncreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JM_btncreateActionPerformed(evt);
@@ -156,11 +159,6 @@ public class ManageEmpJPanel extends javax.swing.JPanel {
         JM_CbOrg.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
         JM_CbOrg.setForeground(new java.awt.Color(102, 73, 111));
         JM_CbOrg.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        JM_CbOrg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JM_CbOrgActionPerformed(evt);
-            }
-        });
 
         JM_LblOrg.setBackground(new java.awt.Color(255, 255, 255));
         JM_LblOrg.setFont(new java.awt.Font(".SF NS Mono", 1, 14)); // NOI18N
@@ -172,6 +170,15 @@ public class ManageEmpJPanel extends javax.swing.JPanel {
         JM_lbltitle.setForeground(new java.awt.Color(255, 255, 255));
         JM_lbltitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JM_lbltitle.setText("MANAGE EMPLOYEE WORKAREA");
+
+        JM_btnNetworkDelete.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
+        JM_btnNetworkDelete.setForeground(new java.awt.Color(102, 73, 111));
+        JM_btnNetworkDelete.setText("DELETE");
+        JM_btnNetworkDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JM_btnNetworkDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout JM_jPanel1Layout = new javax.swing.GroupLayout(JM_jPanel1);
         JM_jPanel1.setLayout(JM_jPanel1Layout);
@@ -187,10 +194,7 @@ public class ManageEmpJPanel extends javax.swing.JPanel {
                     .addGroup(JM_jPanel1Layout.createSequentialGroup()
                         .addGroup(JM_jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(JM_jPanel1Layout.createSequentialGroup()
-                                .addGap(128, 128, 128)
-                                .addComponent(JM_btncreate, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(172, 172, 172))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JM_jPanel1Layout.createSequentialGroup()
+                                .addGap(84, 84, 84)
                                 .addGroup(JM_jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(JM_jPanel1Layout.createSequentialGroup()
                                         .addComponent(JM_LblName)
@@ -200,8 +204,11 @@ public class ManageEmpJPanel extends javax.swing.JPanel {
                                         .addGap(26, 26, 26)))
                                 .addGroup(JM_jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(JM_CbOrg, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JM_txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(127, 127, 127)))
+                                    .addComponent(JM_txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JM_jPanel1Layout.createSequentialGroup()
+                                .addGap(128, 128, 128)
+                                .addComponent(JM_btncreate, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(127, 127, 127)
                         .addComponent(JM_jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(JM_jPanel1Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
@@ -209,6 +216,10 @@ public class ManageEmpJPanel extends javax.swing.JPanel {
                         .addGap(178, 178, 178)
                         .addComponent(JM_lbltitle, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(252, 420, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JM_jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(JM_btnNetworkDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(428, 428, 428))
         );
         JM_jPanel1Layout.setVerticalGroup(
             JM_jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,7 +247,9 @@ public class ManageEmpJPanel extends javax.swing.JPanel {
                     .addGroup(JM_jPanel1Layout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(JM_jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(253, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(JM_btnNetworkDelete)
+                .addContainerGap(208, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -257,7 +270,7 @@ public class ManageEmpJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(JM_jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(97, Short.MAX_VALUE)))
+                    .addContainerGap(93, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -289,9 +302,30 @@ public class ManageEmpJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_JM_btnbackActionPerformed
 
-    private void JM_CbOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_CbOrgActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JM_CbOrgActionPerformed
+    private void JM_btnNetworkDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_btnNetworkDeleteActionPerformed
+
+        int selectedRow = JM_OrgTbl.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Make a row selection for network deletion", "Warning", JOptionPane.WARNING_MESSAGE);
+        } else {
+            //Employee net = (Employee) JM_OrgTbl.getValueAt(selectedRow, 0);
+
+            //for (Employee org : this.org.getEmpDir().getEmpList()){
+            //  if (net== org) {
+            //    this.org.getEmpDir().getEmpList().remove(org);
+            //  break;
+             int empId = (Integer) JM_OrgTbl.getValueAt(selectedRow, 0);
+            for (Employee emp : this.org.getEmpDir().getEmpList()) {
+                if (emp.getId() == empId) {
+                    this.org.getEmpDir().getEmpList().remove(emp);
+                    break;
+                }
+            }
+            JOptionPane.showMessageDialog(null, "Successfully deleted a organization.");
+            autoPoptbl(this.org);
+            
+        }
+    }//GEN-LAST:event_JM_btnNetworkDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -299,6 +333,7 @@ public class ManageEmpJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel JM_LblName;
     private javax.swing.JLabel JM_LblOrg;
     private javax.swing.JTable JM_OrgTbl;
+    private javax.swing.JButton JM_btnNetworkDelete;
     private javax.swing.JButton JM_btnback;
     private javax.swing.JButton JM_btncreate;
     private javax.swing.JPanel JM_jPanel1;

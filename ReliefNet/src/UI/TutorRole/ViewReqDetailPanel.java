@@ -103,7 +103,7 @@ public class ViewReqDetailPanel extends javax.swing.JPanel {
         JM_jLabel5.setFont(new java.awt.Font(".SF NS Mono", 1, 14)); // NOI18N
         JM_jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        JM_jLabel5.setText("Number of Residents:");
+        JM_jLabel5.setText("Number of Volunteers:");
 
         JM_jLabel3.setFont(new java.awt.Font(".SF NS Mono", 1, 14)); // NOI18N
         JM_jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,7 +112,7 @@ public class ViewReqDetailPanel extends javax.swing.JPanel {
         JM_jLabel1.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
         JM_jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        JM_jLabel1.setText("Task Description:");
+        JM_jLabel1.setText("Requirements");
 
         JM_txtTitle.setEditable(false);
         JM_txtTitle.setBackground(new java.awt.Color(255, 255, 255));
@@ -132,7 +132,7 @@ public class ViewReqDetailPanel extends javax.swing.JPanel {
         JM_jLabel2.setFont(new java.awt.Font(".SF NS Mono", 1, 14)); // NOI18N
         JM_jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        JM_jLabel2.setText("TaskTitle:");
+        JM_jLabel2.setText("Job Title:");
 
         JM_txtNoOfStud.setEditable(false);
         JM_txtNoOfStud.setBackground(new java.awt.Color(255, 255, 255));
@@ -176,7 +176,7 @@ public class ViewReqDetailPanel extends javax.swing.JPanel {
         JM_jLabel10.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
         JM_jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JM_jLabel10.setText("Housing Task Details");
+        JM_jLabel10.setText("Tutoring Work Area");
 
         JM_jLabel4.setFont(new java.awt.Font(".SF NS Mono", 1, 14)); // NOI18N
         JM_jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -186,7 +186,7 @@ public class ViewReqDetailPanel extends javax.swing.JPanel {
         JM_jLabel8.setFont(new java.awt.Font(".SF NS Mono", 1, 14)); // NOI18N
         JM_jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        JM_jLabel8.setText("Shelter Location:");
+        JM_jLabel8.setText("Place:");
 
         JM_txtPlace.setEditable(false);
         JM_txtPlace.setBackground(new java.awt.Color(255, 255, 255));
@@ -240,22 +240,18 @@ public class ViewReqDetailPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(JM_jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(JM_jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(JM_jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(JM_jLabel7)
-                                        .addComponent(JM_jLabel3))
-                                    .addComponent(JM_jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(JM_jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(JM_jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(JM_jLabel2)))
+                            .addComponent(JM_jLabel4)
+                            .addComponent(JM_jLabel8)
+                            .addComponent(JM_jLabel5)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(JM_jLabel7)
+                                .addComponent(JM_jLabel3))
+                            .addComponent(JM_jLabel11)
+                            .addComponent(JM_jLabel9)
+                            .addComponent(JM_jLabel1)
+                            .addComponent(JM_jLabel2))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JM_dtChoser, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -312,18 +308,15 @@ public class ViewReqDetailPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JM_jLabel5)
                     .addComponent(JM_txtNoOfVol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JM_jLabel9)
-                    .addComponent(JM_txtNoOfStud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(JM_jLabel4)
-                        .addGap(29, 29, 29))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(JM_txtNoOfHrs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                    .addComponent(JM_txtNoOfStud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JM_jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(JM_txtNoOfHrs)
+                    .addComponent(JM_jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JM_jLabel1)
                     .addComponent(JM_jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -331,7 +324,7 @@ public class ViewReqDetailPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JM_btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JM_btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {JM_btnSave, JM_btnUpdate});

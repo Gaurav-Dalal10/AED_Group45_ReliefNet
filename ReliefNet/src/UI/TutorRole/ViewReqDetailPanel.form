@@ -33,26 +33,19 @@
           <Group type="102" alignment="1" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="JM_jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JM_jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JM_jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Component id="JM_jLabel7" min="-2" max="-2" attributes="0"/>
-                                      <Component id="JM_jLabel3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="JM_jLabel11" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JM_jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JM_jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Component id="JM_jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="JM_jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="JM_jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Component id="JM_jLabel7" min="-2" max="-2" attributes="0"/>
+                              <Component id="JM_jLabel3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="JM_jLabel2" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="JM_jLabel11" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="JM_jLabel9" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="JM_jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="JM_jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -123,22 +116,17 @@
                   <Component id="JM_jLabel5" min="-2" max="-2" attributes="0"/>
                   <Component id="JM_txtNoOfVol" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="JM_jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="JM_txtNoOfStud" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="JM_jLabel4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="JM_txtNoOfHrs" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="JM_txtNoOfStud" min="-2" max="-2" attributes="0"/>
+                  <Component id="JM_jLabel9" min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="JM_txtNoOfHrs" max="32767" attributes="0"/>
+                  <Component id="JM_jLabel4" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="JM_jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="JM_jScrollPane1" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
@@ -148,7 +136,7 @@
                   <Component id="JM_btnSave" linkSize="2" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                   <Component id="JM_btnUpdate" linkSize="2" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="127" max="32767" attributes="0"/>
+              <EmptySpace pref="142" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -171,7 +159,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Number of Residents:"/>
+        <Property name="text" type="java.lang.String" value="Number of Volunteers:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="JM_jLabel3">
@@ -194,7 +182,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Task Description:"/>
+        <Property name="text" type="java.lang.String" value="Requirements"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="JM_txtTitle">
@@ -237,7 +225,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="TaskTitle:"/>
+        <Property name="text" type="java.lang.String" value="Job Title:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="JM_txtNoOfStud">
@@ -332,7 +320,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Housing Task Details"/>
+        <Property name="text" type="java.lang.String" value="Tutoring Work Area"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="JM_jLabel4">
@@ -356,7 +344,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Shelter Location:"/>
+        <Property name="text" type="java.lang.String" value="Place:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="JM_txtPlace">

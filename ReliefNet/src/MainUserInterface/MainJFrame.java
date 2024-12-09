@@ -52,6 +52,7 @@ public class MainJFrame extends javax.swing.JFrame {
         container = new javax.swing.JPanel();
         JM_jPanel2 = new javax.swing.JPanel();
         JM_jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,7 +96,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(JM_jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(JM_txtpwd)
                     .addComponent(JM_btnlogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(JM_btnlogout, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
+                    .addComponent(JM_btnlogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         JM_jPanel1Layout.setVerticalGroup(
@@ -113,7 +114,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(JM_btnlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(JM_btnlogout, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(434, Short.MAX_VALUE))
+                .addContainerGap(486, Short.MAX_VALUE))
         );
 
         JM_jSplitPane1.setLeftComponent(JM_jPanel1);
@@ -128,17 +129,27 @@ public class MainJFrame extends javax.swing.JFrame {
         JM_jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JM_jLabel3.setText("ReliefNet");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Reliefhelp.jpg"))); // NOI18N
+
         javax.swing.GroupLayout JM_jPanel2Layout = new javax.swing.GroupLayout(JM_jPanel2);
         JM_jPanel2.setLayout(JM_jPanel2Layout);
         JM_jPanel2Layout.setHorizontalGroup(
             JM_jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JM_jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JM_jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1261, Short.MAX_VALUE))
+                .addGap(184, 184, 184)
+                .addGroup(JM_jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JM_jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(303, Short.MAX_VALUE))
         );
         JM_jPanel2Layout.setVerticalGroup(
             JM_jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JM_jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 783, Short.MAX_VALUE)
+            .addGroup(JM_jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JM_jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         container.add(JM_jPanel2, "card2");
@@ -297,5 +308,6 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField JM_txtUsername;
     private javax.swing.JPasswordField JM_txtpwd;
     private javax.swing.JPanel container;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

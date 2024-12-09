@@ -77,7 +77,7 @@ public class StoragePanel extends javax.swing.JPanel {
 
         JM_btnMyOrders.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         JM_btnMyOrders.setForeground(new java.awt.Color(102, 73, 111));
-        JM_btnMyOrders.setText("My Ordres");
+        JM_btnMyOrders.setText("My Orders");
         JM_btnMyOrders.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JM_btnMyOrdersActionPerformed(evt);

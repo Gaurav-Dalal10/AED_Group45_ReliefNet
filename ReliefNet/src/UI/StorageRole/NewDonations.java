@@ -118,6 +118,7 @@ public class NewDonations extends javax.swing.JPanel {
         JM_jLabel11 = new javax.swing.JLabel();
         JM_txtphNo = new javax.swing.JTextField();
         JM_btnOrder = new javax.swing.JButton();
+        JM_btnback = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(102, 73, 111));
 
@@ -207,6 +208,15 @@ public class NewDonations extends javax.swing.JPanel {
             }
         });
 
+        JM_btnback.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
+        JM_btnback.setForeground(new java.awt.Color(102, 73, 111));
+        JM_btnback.setText("<< Back");
+        JM_btnback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JM_btnbackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -239,15 +249,19 @@ public class NewDonations extends javax.swing.JPanel {
                         .addComponent(JM_btnOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JM_jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 1213, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
+                .addComponent(JM_btnback)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(JM_jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 1107, Short.MAX_VALUE)
                 .addGap(181, 181, 181))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addComponent(JM_jLabel25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JM_jLabel25)
+                    .addComponent(JM_btnback))
                 .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JM_jLabel1)
@@ -342,9 +356,18 @@ public class NewDonations extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_JM_txtphNoActionPerformed
 
+    private void JM_btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_btnbackActionPerformed
+        // TODO add your handling code here:
+         userProcessContainer.remove(this);
+        java.awt.CardLayout layout = (java.awt.CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+        
+    }//GEN-LAST:event_JM_btnbackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JM_btnOrder;
+    private javax.swing.JButton JM_btnback;
     private javax.swing.JLabel JM_jLabel1;
     private javax.swing.JLabel JM_jLabel11;
     private javax.swing.JLabel JM_jLabel2;
