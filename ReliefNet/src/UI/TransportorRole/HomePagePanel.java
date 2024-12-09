@@ -1,8 +1,33 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package UI.TransportorRole;
+
+import Model.EcoSystem;
+import Model.Enterprise.Enterprise;
+import Model.Organization.Organisation;
+import Model.Organization.TransportOrg;
+//import Business.Organization.VolunteerOrg;
+import Model.Role.TransportorRole;
+import Model.UserAccount.UserAccount;
+import Model.WorkQueue.TutorVolunteerWorkReq;
+import Model.WorkQueue.HospitalPharmacyWorkReq;
+import Model.WorkQueue.VolunteerStorageWorkRequest;
+import Model.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -10,13 +35,61 @@ package UI.TransportorRole;
  */
 public class HomePagePanel extends javax.swing.JPanel {
 
+    private JPanel userProcessContainer;
+    private EcoSystem system;
+    private UserAccount ua;
+    private Enterprise ent;
+    private TransportOrg org;
     /**
-     * Creates new form HomePagePanel
+     * Creates new form HomePage
      */
-    public HomePagePanel() {
+    public HomePagePanel(JPanel userProcessContainer, UserAccount acc, Organisation org,  EcoSystem system, Enterprise ent) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.ua = acc;
+        this.system = system;
+        this.ent = ent;
+        this.org = (TransportOrg) org;
+        autoPopOrders();
     }
+    
+    public void autoPopOrders(){    
+        DefaultTableModel mdl = (DefaultTableModel) tblOrders.getModel();
+        
+        mdl.setRowCount(0);
 
+        for (Iterator<WorkRequest> wr = org.getWorkQueue().getWrList().iterator(); wr.hasNext();) {
+            WorkRequest workRequest = (WorkRequest) wr.next();
+            if(workRequest instanceof VolunteerStorageWorkRequest){
+                VolunteerStorageWorkRequest req = (VolunteerStorageWorkRequest) workRequest;
+                if(req.getStatus().equalsIgnoreCase("Ordered")){
+                    Object[] row = new Object[5];
+                    row[0]= req;
+                    row[1]=req.getSenderAddress();
+                    row[2]= req.getRecieverAddress();
+                    row[3] = req.getStatus();
+                    mdl.addRow(row);
+                }
+            }else{
+                HospitalPharmacyWorkReq req = (HospitalPharmacyWorkReq) workRequest;
+                if(req.getStatus().equalsIgnoreCase("Delivery Requested")){
+                    Object[] row = new Object[5];
+                    row[0]= req;
+                    row[2]= req.getSenderAdd();
+                    row[1]= req.getRecieverAdd();
+                    row[3] = req.getStatus();
+                    mdl.addRow(row);
+                }
+            }
+        }
+    }
+    
+    private boolean checkPhoneNo(String phNo) {
+        Pattern pattern = Pattern.compile("^[0-9]{10}$");
+        Matcher matcher = pattern.matcher(phNo);
+        return matcher.matches();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,7 +103,9 @@ public class HomePagePanel extends javax.swing.JPanel {
         JM_jScrollPane1 = new javax.swing.JScrollPane();
         tblOrders = new javax.swing.JTable();
         JM_jLabel3 = new javax.swing.JLabel();
+        JM_dtPickup = new com.toedter.calendar.JDateChooser();
         JM_jLabel4 = new javax.swing.JLabel();
+        JM_dtDeliver = new com.toedter.calendar.JDateChooser();
         JM_jLabel5 = new javax.swing.JLabel();
         JM_txtPhNo = new javax.swing.JTextField();
         JM_jLabel1 = new javax.swing.JLabel();
@@ -41,6 +116,9 @@ public class HomePagePanel extends javax.swing.JPanel {
         txtReceiverAddr = new javax.swing.JTextArea();
         JM_btnBack = new javax.swing.JButton();
         JM_btnAssignToMe = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(102, 73, 111));
+        setForeground(new java.awt.Color(102, 0, 102));
 
         JM_jLabel25.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
         JM_jLabel25.setForeground(new java.awt.Color(255, 255, 255));
@@ -54,7 +132,7 @@ public class HomePagePanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Request ID", "Sender Address", "Reciever Address", "Status"
+                "Order ID", "Sender Address", "Reciever Address", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -76,9 +154,17 @@ public class HomePagePanel extends javax.swing.JPanel {
         JM_jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel3.setText("PickUp Date");
 
+        JM_dtPickup.setForeground(new java.awt.Color(102, 0, 102));
+        JM_dtPickup.setToolTipText("");
+        JM_dtPickup.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
+
         JM_jLabel4.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
         JM_jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel4.setText("Delivery Date");
+
+        JM_dtDeliver.setForeground(new java.awt.Color(102, 0, 102));
+        JM_dtDeliver.setToolTipText("");
+        JM_dtDeliver.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
 
         JM_jLabel5.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
         JM_jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,7 +199,7 @@ public class HomePagePanel extends javax.swing.JPanel {
         JM_jScrollPane3.setViewportView(txtReceiverAddr);
 
         JM_btnBack.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        JM_btnBack.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnBack.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnBack.setText("<<<Back");
         JM_btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,8 +208,8 @@ public class HomePagePanel extends javax.swing.JPanel {
         });
 
         JM_btnAssignToMe.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnAssignToMe.setForeground(new java.awt.Color(0, 153, 153));
-        JM_btnAssignToMe.setText("Assign Supply Request");
+        JM_btnAssignToMe.setForeground(new java.awt.Color(102, 73, 111));
+        JM_btnAssignToMe.setText("Assign to me");
         JM_btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JM_btnAssignToMeActionPerformed(evt);
@@ -159,6 +245,8 @@ public class HomePagePanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(28, 28, 28)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JM_dtDeliver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JM_dtPickup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(JM_jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 697, Short.MAX_VALUE)
                                     .addComponent(JM_txtPhNo)))))))
             .addGroup(layout.createSequentialGroup()
@@ -183,9 +271,13 @@ public class HomePagePanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addComponent(JM_jLabel3)
-                        .addGap(54, 54, 54)
+                        .addGap(18, 18, 18)
+                        .addComponent(JM_dtPickup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(JM_jLabel4)
-                        .addGap(65, 65, 65)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JM_dtDeliver, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
                         .addComponent(JM_jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(JM_txtPhNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -232,12 +324,6 @@ public class HomePagePanel extends javax.swing.JPanel {
     private void JM_txtPhNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_txtPhNoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JM_txtPhNoActionPerformed
-
-    private void JM_btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_btnBackActionPerformed
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);        // TODO add your handling code here:
-    }//GEN-LAST:event_JM_btnBackActionPerformed
 
     private void JM_btnAssignToMeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_btnAssignToMeActionPerformed
 
@@ -348,10 +434,18 @@ public class HomePagePanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_JM_btnAssignToMeActionPerformed
 
+    private void JM_btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_btnBackActionPerformed
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);        // TODO add your handling code here:
+    }//GEN-LAST:event_JM_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JM_btnAssignToMe;
     private javax.swing.JButton JM_btnBack;
+    private com.toedter.calendar.JDateChooser JM_dtDeliver;
+    private com.toedter.calendar.JDateChooser JM_dtPickup;
     private javax.swing.JLabel JM_jLabel1;
     private javax.swing.JLabel JM_jLabel2;
     private javax.swing.JLabel JM_jLabel25;

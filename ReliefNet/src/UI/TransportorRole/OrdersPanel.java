@@ -30,7 +30,7 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 /**
  *
- * @author krishna
+ * @author Hp
  */
 public class OrdersPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
@@ -228,7 +228,7 @@ public class OrdersPanel extends javax.swing.JPanel {
         txtReceiverAddr = new javax.swing.JTextArea();
         JM_btnBack = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(102, 73, 111));
 
         JM_jLabel7.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
         JM_jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -336,7 +336,7 @@ public class OrdersPanel extends javax.swing.JPanel {
         JM_jScrollPane6.setViewportView(txtReceiverAddr);
 
         JM_btnBack.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        JM_btnBack.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnBack.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnBack.setText("<<<Back");
         JM_btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

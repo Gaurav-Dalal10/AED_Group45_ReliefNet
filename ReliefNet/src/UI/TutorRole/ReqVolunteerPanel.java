@@ -1,20 +1,44 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package UI.TutorRole;
-
+import Model.Enterprise.Enterprise;
+import Model.Organization.Organisation;
+import Model.Organization.VolunteerOrg;
+import Model.UserAccount.UserAccount;
+import Model.WorkQueue.TutorVolunteerWorkReq;
+import Model.WorkQueue.LaboratoryTestWorkReq;
+import java.awt.CardLayout;
+import java.awt.Component;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerDateModel;
 /**
  *
- * @author Hp
+ * @author krishna
  */
 public class ReqVolunteerPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ReqVolunteerPanel
      */
-    public ReqVolunteerPanel() {
+    private JPanel userProcessContainer;
+    private Enterprise ent;
+    private UserAccount ua;
+    
+    public ReqVolunteerPanel(JPanel userProcessContainer, UserAccount acc, Enterprise ent) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.ent = ent;
+        this.ua = acc;
     }
 
     /**
@@ -30,6 +54,7 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
         Date date = new Date();
         SpinnerDateModel sm = new SpinnerDateModel(date, null, null, Calendar.HOUR_OF_DAY);
         JM_tsTime = new javax.swing.JSpinner(sm);
+        JM_dtChoser = new com.toedter.calendar.JDateChooser();
         JM_jScrollPane4 = new javax.swing.JScrollPane();
         txtRequirements = new javax.swing.JTextArea();
         JM_txtTitle = new javax.swing.JTextField();
@@ -51,6 +76,7 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
         JM_jLabel10 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(102, 73, 111));
+        setForeground(new java.awt.Color(102, 0, 102));
 
         JM_txtArea.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
         JM_txtArea.setForeground(new java.awt.Color(102, 0, 102));
@@ -58,6 +84,9 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
         JSpinner.DateEditor de = new JSpinner.DateEditor(JM_tsTime, "HH:mm");
         JM_tsTime.setEditor(de);
         JM_tsTime.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
+
+        JM_dtChoser.setToolTipText("");
+        JM_dtChoser.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
 
         txtRequirements.setColumns(20);
         txtRequirements.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
@@ -73,12 +102,12 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
         JM_jLabel2.setFont(new java.awt.Font(".SF NS Mono", 1, 14)); // NOI18N
         JM_jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        JM_jLabel2.setText("Shelter Task Title:");
+        JM_jLabel2.setText("Job Title:");
 
         JM_jLabel8.setFont(new java.awt.Font(".SF NS Mono", 1, 14)); // NOI18N
         JM_jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        JM_jLabel8.setText("Number of Residents:");
+        JM_jLabel8.setText("Number of Students:");
 
         JM_jLabel3.setFont(new java.awt.Font(".SF NS Mono", 1, 14)); // NOI18N
         JM_jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -95,10 +124,10 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
         JM_jLabel7.setFont(new java.awt.Font(".SF NS Mono", 1, 14)); // NOI18N
         JM_jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        JM_jLabel7.setText("Shelter Location :");
+        JM_jLabel7.setText("Place:");
 
         JM_btnBack.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
-        JM_btnBack.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnBack.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnBack.setText("<<Back");
         JM_btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,14 +138,14 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
         JM_jLabel5.setFont(new java.awt.Font(".SF NS Mono", 1, 14)); // NOI18N
         JM_jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        JM_jLabel5.setText("Required Volunteers :");
+        JM_jLabel5.setText("Number of Volunteers:");
 
         JM_txtNoOfVol.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
         JM_txtNoOfVol.setForeground(new java.awt.Color(102, 0, 102));
 
         JM_requestVolunteerJButton.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_requestVolunteerJButton.setForeground(new java.awt.Color(0, 153, 153));
-        JM_requestVolunteerJButton.setText("Submit");
+        JM_requestVolunteerJButton.setForeground(new java.awt.Color(102, 73, 111));
+        JM_requestVolunteerJButton.setText("CREATE");
         JM_requestVolunteerJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JM_requestVolunteerJButtonActionPerformed(evt);
@@ -143,14 +172,14 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
         JM_jLabel10.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
         JM_jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JM_jLabel10.setText("Shelter Housing In-Charge - Volunteer Requests");
+        JM_jLabel10.setText("New Volunteer Request");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(325, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(JM_jLabel4)
@@ -158,9 +187,11 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
                         .addComponent(JM_txtNoOfHrs, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(JM_jLabel8)
                             .addComponent(JM_jLabel5)
-                            .addComponent(JM_jLabel1))
+                            .addComponent(JM_jLabel1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(JM_btnBack)
+                                .addComponent(JM_jLabel8)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JM_requestVolunteerJButton)
@@ -177,31 +208,32 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(JM_txtTitle)
+                            .addComponent(JM_dtChoser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(JM_tsTime)
                             .addComponent(JM_txtPlace, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(JM_jLabel9)
                         .addGap(18, 18, 18)
                         .addComponent(JM_txtArea, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(334, Short.MAX_VALUE))
+                .addContainerGap(295, Short.MAX_VALUE))
             .addComponent(JM_jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(JM_btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addComponent(JM_jLabel10)
-                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JM_jLabel10)
+                    .addComponent(JM_btnBack))
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JM_jLabel2)
                     .addComponent(JM_txtTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JM_jLabel3)
-                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JM_dtChoser, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JM_jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JM_tsTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JM_jLabel6))
@@ -231,9 +263,7 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
                     .addComponent(JM_jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addComponent(JM_requestVolunteerJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(JM_btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -384,6 +414,7 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JM_btnBack;
+    private com.toedter.calendar.JDateChooser JM_dtChoser;
     private javax.swing.JLabel JM_jLabel1;
     private javax.swing.JLabel JM_jLabel10;
     private javax.swing.JLabel JM_jLabel2;

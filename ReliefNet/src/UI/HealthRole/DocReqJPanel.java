@@ -1,20 +1,41 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package UI.HealthRole;
 
 /**
  *
- * @author Hp
+ * @author Mrinalini 
  */
-public class DocReqJPanel extends javax.swing.JPanel {
+import Model.Enterprise.Enterprise;
+import Model.Network.Network;
+import Model.Organization.DoctorOrg;
+import Model.Organization.HealthOrg;
+import Model.Organization.Organisation;
+import Model.UserAccount.UserAccount;
+import Model.WorkQueue.HospitalDoctorWorkReq;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
+public class DocReqJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DocReqJPanel
      */
-    public DocReqJPanel() {
+    private JPanel userProcessContainer;
+    private Enterprise ent;
+    private UserAccount ua;
+    private Network net;
+    
+    public DocReqJPanel(JPanel userProcessContainer, UserAccount acc, Enterprise ent, Network net) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.ent = ent;
+        this.ua = acc;
+        this.net = net;
     }
 
     /**
@@ -43,6 +64,7 @@ public class DocReqJPanel extends javax.swing.JPanel {
         JM_lbltitle = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(102, 73, 111));
+        setForeground(new java.awt.Color(102, 0, 102));
 
         JM_lblnoofpat.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
         JM_lblnoofpat.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,7 +174,7 @@ public class DocReqJPanel extends javax.swing.JPanel {
                     .addComponent(JM_cbpattype, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JM_cbdoctype, 0, 250, Short.MAX_VALUE)
                     .addComponent(JM_btnreq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(474, Short.MAX_VALUE))
+                .addContainerGap(649, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,7 +206,7 @@ public class DocReqJPanel extends javax.swing.JPanel {
                     .addComponent(JM_lblpurpose))
                 .addGap(42, 42, 42)
                 .addComponent(JM_btnreq, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(229, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -243,8 +265,8 @@ public class DocReqJPanel extends javax.swing.JPanel {
         req.setSender(ua);
         req.setStatus("Sent");
 
-        Organisation org = null;
-
+       Organisation org = null;
+       
         for(Enterprise e: net.getEntDir().getEntList())
         {
             if(e.getEntType().equals(e.getEntType().Hospital))
@@ -253,7 +275,7 @@ public class DocReqJPanel extends javax.swing.JPanel {
                 {
                     if (organization instanceof DoctorOrg){
                         org = organization;
-                        org.getWorkQueue().getWrList().add(req);
+                        org.getWorkQueue().getWrList().add(req);           
                     }
                 }
             }

@@ -7,7 +7,7 @@ package UI.VolunteerRole;
 
 /**
  *
- * @author krishna
+ * @author Hp
  */
 import Model.EcoSystem;
 import Model.Enterprise.Enterprise;
@@ -270,7 +270,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         JM_jLabel33 = new javax.swing.JLabel();
         JM_jLabel34 = new javax.swing.JLabel();
 
-        JM_VolunteerJTabbedPane.setBackground(new java.awt.Color(0, 153, 153));
+        JM_VolunteerJTabbedPane.setBackground(new java.awt.Color(102, 73, 111));
         JM_VolunteerJTabbedPane.setForeground(new java.awt.Color(255, 255, 255));
         JM_VolunteerJTabbedPane.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 14)); // NOI18N
         JM_VolunteerJTabbedPane.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -281,7 +281,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
 
         JM_HomePageJPanel.setLayout(new java.awt.BorderLayout());
 
-        JM_leftJPanel.setBackground(new java.awt.Color(0, 153, 153));
+        JM_leftJPanel.setBackground(new java.awt.Color(102, 73, 111));
         JM_leftJPanel.setForeground(new java.awt.Color(102, 0, 102));
         JM_leftJPanel.setToolTipText("");
 
@@ -290,7 +290,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         txtAge.setForeground(new java.awt.Color(102, 0, 102));
 
         btnUpdateDetail.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        btnUpdateDetail.setForeground(new java.awt.Color(0, 153, 153));
+        btnUpdateDetail.setForeground(new java.awt.Color(102, 73, 111));
         btnUpdateDetail.setText("Update Details");
         btnUpdateDetail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -357,7 +357,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel24.setText("Volunteer Details");
 
         btnHistory.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        btnHistory.setForeground(new java.awt.Color(0, 153, 153));
+        btnHistory.setForeground(new java.awt.Color(102, 73, 111));
         btnHistory.setText("Donation History");
         btnHistory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -436,7 +436,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
 
         JM_jSplitPane1.setLeftComponent(JM_leftJPanel);
 
-        JM_rightJPanel.setBackground(new java.awt.Color(0, 153, 153));
+        JM_rightJPanel.setBackground(new java.awt.Color(102, 73, 111));
 
         tblTaskAssigned.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 13)); // NOI18N
         tblTaskAssigned.setForeground(new java.awt.Color(102, 0, 102));
@@ -467,7 +467,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(tblTaskAssigned);
 
         btnRefresh.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        btnRefresh.setForeground(new java.awt.Color(0, 153, 153));
+        btnRefresh.setForeground(new java.awt.Color(102, 73, 111));
         btnRefresh.setText("Refresh");
         btnRefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -540,7 +540,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         dtChoser.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 14)); // NOI18N
 
         btnCancelReq.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        btnCancelReq.setForeground(new java.awt.Color(0, 153, 153));
+        btnCancelReq.setForeground(new java.awt.Color(102, 73, 111));
         btnCancelReq.setText("Cancel Request");
         btnCancelReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1123,7 +1123,7 @@ public class VolunteerWorkAreaJPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JM_VolunteerJTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1005, Short.MAX_VALUE)
+            .addComponent(JM_VolunteerJTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1005, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
