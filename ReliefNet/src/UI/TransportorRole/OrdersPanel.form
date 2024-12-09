@@ -131,7 +131,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Clothing Supplies History"/>
+        <Property name="text" type="java.lang.String" value="Orders History"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="JM_jScrollPane4">

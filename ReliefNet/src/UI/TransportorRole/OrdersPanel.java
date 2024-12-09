@@ -233,7 +233,7 @@ public class OrdersPanel extends javax.swing.JPanel {
         JM_jLabel7.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
         JM_jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         JM_jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        JM_jLabel7.setText("Clothing Supplies History");
+        JM_jLabel7.setText("Orders History");
 
         tblDeliveryHistory.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 13)); // NOI18N
         tblDeliveryHistory.setForeground(new java.awt.Color(102, 0, 102));
