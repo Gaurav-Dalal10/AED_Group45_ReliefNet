@@ -31,7 +31,7 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 /**
  *
- * @author krishna
+ * @author Hp
  */
 public class TransportorPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
@@ -67,10 +67,10 @@ public class TransportorPanel extends javax.swing.JPanel {
         JM_jLabel2 = new javax.swing.JLabel();
         JM_jLabel3 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(102, 73, 111));
 
         JM_btnHomePage.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        JM_btnHomePage.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnHomePage.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnHomePage.setText("HomePage");
         JM_btnHomePage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +79,7 @@ public class TransportorPanel extends javax.swing.JPanel {
         });
 
         JM_btnOrders.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        JM_btnOrders.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnOrders.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnOrders.setText("My Orders");
         JM_btnOrders.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

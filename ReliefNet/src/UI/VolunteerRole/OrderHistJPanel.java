@@ -7,7 +7,7 @@ package UI.VolunteerRole;
 
 /**
  *
- * @author krishna
+ * @author Hp
  */
 import Model.EcoSystem;
 import Model.Enterprise.Enterprise;
@@ -120,7 +120,7 @@ public void populateorderdetailstbl(ArrayList<String> category, ArrayList<Intege
         JM_lblorderdetails = new javax.swing.JLabel();
         JM_lbltitle = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(102, 73, 111));
         setForeground(new java.awt.Color(102, 0, 102));
 
         tblorderhist.setFont(new java.awt.Font(".AppleSystemUIFont", 0, 13)); // NOI18N
@@ -167,7 +167,7 @@ public void populateorderdetailstbl(ArrayList<String> category, ArrayList<Intege
         JM_jScrollPane6.setViewportView(tblorderdetails);
 
         JM_btnback.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnback.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnback.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnback.setText("<< Back");
         JM_btnback.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

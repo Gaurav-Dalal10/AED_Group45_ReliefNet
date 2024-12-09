@@ -27,47 +27,41 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="JM_lblpwd" min="-2" max="-2" attributes="0"/>
+                          <Component id="JM_lblorg" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="JM_lblemp" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="JM_lblrole" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="JM_lblusername" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="JM_btnback" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="JM_btncreate" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="JM_lblpwd" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JM_lblorg" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JM_lblemp" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JM_lblrole" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JM_lblusername" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                                      <Component id="JM_btncreate" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="JM_orgcb" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="JM_rolecb" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="JM_txtusername" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="JM_empcb" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="JM_txtpwd" min="-2" pref="180" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="JM_orgcb" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="JM_rolecb" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="JM_txtusername" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="JM_empcb" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="JM_txtpwd" min="-2" pref="180" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                       <Component id="JM_jScrollPane1" min="-2" pref="538" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="286" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="JM_btnback" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
                       <Component id="JM_lbltitle" min="-2" pref="520" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="327" max="32767" attributes="0"/>
+              <EmptySpace pref="419" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -75,9 +69,12 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-              <Component id="JM_lbltitle" min="-2" pref="54" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="JM_lbltitle" min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="JM_btnback" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="JM_lblorg" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -108,9 +105,7 @@
                   </Group>
                   <Component id="JM_jScrollPane1" min="-2" pref="266" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="265" max="32767" attributes="0"/>
-              <Component id="JM_btnback" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+              <EmptySpace pref="387" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

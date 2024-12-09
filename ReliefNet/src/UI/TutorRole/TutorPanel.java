@@ -24,7 +24,7 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 /**
  *
- * @author krishna
+ * @author Hp
  */
 public class TutorPanel extends javax.swing.JPanel {
 
@@ -86,10 +86,10 @@ public class TutorPanel extends javax.swing.JPanel {
         JM_btnVolList = new javax.swing.JButton();
         JM_btnDeleteReq = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(102, 73, 111));
 
         JM_btnViewReqDetail.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnViewReqDetail.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnViewReqDetail.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnViewReqDetail.setText("View Request Details");
         JM_btnViewReqDetail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,7 +98,7 @@ public class TutorPanel extends javax.swing.JPanel {
         });
 
         JM_btnNewReq.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnNewReq.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnNewReq.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnNewReq.setText("Create New Request");
         JM_btnNewReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,7 +152,7 @@ public class TutorPanel extends javax.swing.JPanel {
         JM_jLabel1.setText("Tutor Panel");
 
         JM_btnVolList.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnVolList.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnVolList.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnVolList.setText("Get Volunteers List");
         JM_btnVolList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,7 +161,7 @@ public class TutorPanel extends javax.swing.JPanel {
         });
 
         JM_btnDeleteReq.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnDeleteReq.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnDeleteReq.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnDeleteReq.setText("Delete Request");
         JM_btnDeleteReq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

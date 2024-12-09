@@ -31,7 +31,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author krishna
+ * @author Hp
  */
 public class HomePagePanel extends javax.swing.JPanel {
 
@@ -117,7 +117,7 @@ public class HomePagePanel extends javax.swing.JPanel {
         JM_btnBack = new javax.swing.JButton();
         JM_btnAssignToMe = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(102, 73, 111));
         setForeground(new java.awt.Color(102, 0, 102));
 
         JM_jLabel25.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
@@ -199,7 +199,7 @@ public class HomePagePanel extends javax.swing.JPanel {
         JM_jScrollPane3.setViewportView(txtReceiverAddr);
 
         JM_btnBack.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        JM_btnBack.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnBack.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnBack.setText("<<<Back");
         JM_btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,7 +208,7 @@ public class HomePagePanel extends javax.swing.JPanel {
         });
 
         JM_btnAssignToMe.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnAssignToMe.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnAssignToMe.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnAssignToMe.setText("Assign to me");
         JM_btnAssignToMe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

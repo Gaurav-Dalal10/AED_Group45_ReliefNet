@@ -75,7 +75,7 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
         JM_jLabel6 = new javax.swing.JLabel();
         JM_jLabel10 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(102, 73, 111));
         setForeground(new java.awt.Color(102, 0, 102));
 
         JM_txtArea.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
@@ -127,7 +127,7 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
         JM_jLabel7.setText("Place:");
 
         JM_btnBack.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
-        JM_btnBack.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnBack.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnBack.setText("<<Back");
         JM_btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,7 +144,7 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
         JM_txtNoOfVol.setForeground(new java.awt.Color(102, 0, 102));
 
         JM_requestVolunteerJButton.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_requestVolunteerJButton.setForeground(new java.awt.Color(0, 153, 153));
+        JM_requestVolunteerJButton.setForeground(new java.awt.Color(102, 73, 111));
         JM_requestVolunteerJButton.setText("CREATE");
         JM_requestVolunteerJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,9 +187,11 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
                         .addComponent(JM_txtNoOfHrs, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(JM_jLabel8)
                             .addComponent(JM_jLabel5)
-                            .addComponent(JM_jLabel1))
+                            .addComponent(JM_jLabel1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(JM_btnBack)
+                                .addComponent(JM_jLabel8)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JM_requestVolunteerJButton)
@@ -215,17 +217,15 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
                         .addComponent(JM_txtArea, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(295, Short.MAX_VALUE))
             .addComponent(JM_jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(JM_btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addComponent(JM_jLabel10)
-                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JM_jLabel10)
+                    .addComponent(JM_btnBack))
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JM_jLabel2)
                     .addComponent(JM_txtTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -263,9 +263,7 @@ public class ReqVolunteerPanel extends javax.swing.JPanel {
                     .addComponent(JM_jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addComponent(JM_requestVolunteerJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(JM_btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

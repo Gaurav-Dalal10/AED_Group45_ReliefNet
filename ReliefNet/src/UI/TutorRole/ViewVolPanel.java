@@ -184,7 +184,7 @@ public class ViewVolPanel extends javax.swing.JPanel {
         JM_jScrollPane2 = new javax.swing.JScrollPane();
         txtEducation = new javax.swing.JTextArea();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(102, 73, 111));
 
         JM_jLabel9.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
         JM_jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -223,7 +223,7 @@ public class ViewVolPanel extends javax.swing.JPanel {
         JM_txtAge.setForeground(new java.awt.Color(102, 0, 102));
 
         JM_btnDecline.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnDecline.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnDecline.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnDecline.setText("Decline Request");
         JM_btnDecline.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

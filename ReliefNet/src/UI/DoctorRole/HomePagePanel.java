@@ -25,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author monalikapradhan
+ * @author Hp
  */
 public class HomePagePanel extends javax.swing.JPanel {
 
@@ -145,6 +145,11 @@ public class HomePagePanel extends javax.swing.JPanel {
             }
         });
         JM_jScrollPane1.setViewportView(JM_tblAssignTable);
+        if (JM_tblAssignTable.getColumnModel().getColumnCount() > 0) {
+            JM_tblAssignTable.getColumnModel().getColumn(0).setPreferredWidth(120);
+            JM_tblAssignTable.getColumnModel().getColumn(1).setPreferredWidth(120);
+            JM_tblAssignTable.getColumnModel().getColumn(3).setPreferredWidth(120);
+        }
 
         JM_btnViewMessage.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
         JM_btnViewMessage.setForeground(new java.awt.Color(102, 73, 111));
@@ -188,19 +193,20 @@ public class HomePagePanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(JM_btnRefresh)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(JM_btnProcess, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(JM_jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(92, 92, 92)
+                                .addComponent(JM_btnRefresh)
+                                .addGap(345, 345, 345)
+                                .addComponent(JM_btnProcess, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JM_jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(82, 82, 82)
                                 .addComponent(JM_btnViewMessage)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                                 .addComponent(JM_jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(23, 23, 23)
@@ -228,9 +234,9 @@ public class HomePagePanel extends javax.swing.JPanel {
                         .addComponent(JM_jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(498, 498, 498))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
+                        .addGap(59, 59, 59)
                         .addComponent(JM_jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(JM_btnRefresh)
                             .addComponent(JM_btnProcess, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))

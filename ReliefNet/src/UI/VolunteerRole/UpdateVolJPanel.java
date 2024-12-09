@@ -7,7 +7,7 @@ package UI.VolunteerRole;
 
 /**
  *
- * @author krishna
+ * @author Hp
  */
 import Model.Employee.Volunteer;
 import Model.UserAccount.UserAccount;
@@ -161,10 +161,10 @@ public class UpdateVolJPanel extends javax.swing.JPanel {
         txtareaskills = new javax.swing.JTextArea();
         JM_lblskill = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(102, 73, 111));
 
         JM_btnback.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnback.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnback.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnback.setText("<< Back");
         JM_btnback.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,6 +231,7 @@ public class UpdateVolJPanel extends javax.swing.JPanel {
             }
         });
 
+        JM_lbltitle.setBackground(new java.awt.Color(102, 73, 111));
         JM_lbltitle.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 24)); // NOI18N
         JM_lbltitle.setForeground(new java.awt.Color(255, 255, 255));
         JM_lbltitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -247,7 +248,7 @@ public class UpdateVolJPanel extends javax.swing.JPanel {
         });
 
         JM_btnupdt.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnupdt.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnupdt.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnupdt.setText("UPDATE");
         JM_btnupdt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,7 +257,7 @@ public class UpdateVolJPanel extends javax.swing.JPanel {
         });
 
         JM_btnsave.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 14)); // NOI18N
-        JM_btnsave.setForeground(new java.awt.Color(0, 153, 153));
+        JM_btnsave.setForeground(new java.awt.Color(102, 73, 111));
         JM_btnsave.setText("SAVE");
         JM_btnsave.setEnabled(false);
         JM_btnsave.addActionListener(new java.awt.event.ActionListener() {
@@ -269,6 +270,7 @@ public class UpdateVolJPanel extends javax.swing.JPanel {
         JM_DOBDate.setEnabled(false);
         JM_DOBDate.setFont(new java.awt.Font(".SF NS Mono", 0, 14)); // NOI18N
 
+        JM_lblperinfo.setBackground(new java.awt.Color(102, 73, 111));
         JM_lblperinfo.setFont(new java.awt.Font(".AppleSystemUIFont", 1, 18)); // NOI18N
         JM_lblperinfo.setForeground(new java.awt.Color(255, 255, 255));
         JM_lblperinfo.setText("Personal Information");
