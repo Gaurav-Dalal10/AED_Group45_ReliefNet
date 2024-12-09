@@ -4,6 +4,9 @@
  */
 package Model.Enterprise;
 
+import Model.Organization.Organisation;
+import Model.Organization.OrganisationDirectory;
+
 /**
  *
  * @author gaura
@@ -26,10 +29,12 @@ public abstract class Enterprise extends Organisation{
     }
     
     public enum EntType{
-        MedicalCenter("MedicalCenter"), 
-        EmergencyShelter("EmergencyShelter"),
-        Clothing("Clothing"),
-        FoodBank("FoodBank");
+
+        Hospital("MedicalCenter"), 
+        NGO("EmergencyShelter"),
+        Transpotation("Clothing"),
+        Resturant("FoodBank");
+
         
         private String type;
 

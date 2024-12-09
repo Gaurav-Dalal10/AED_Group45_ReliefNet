@@ -4,17 +4,19 @@
  */
 package Model.Enterprise;
 
+import Model.Role.Role;
 import java.util.ArrayList;
 
 /**
  *
  * @author gaura
  */
-public class FoodBankEnterprise extends Enterprise{
+public class TransportationEnterprise extends Enterprise{
     
     public enum Type{
-       Restaurant("Restaurant Organization");
+       Transport("Transport Organization");
         private String type;
+
         public String getType() {
             return type;
         }
@@ -22,14 +24,14 @@ public class FoodBankEnterprise extends Enterprise{
         private Type(String type) {
             this.type = type;
         }
+
     }
     
-    public FoodBankEnterprise(String name){
-        super(name,Enterprise.EntType.FoodBank);
+    public TransportationEnterprise(String name){
+        super(name, Enterprise.EntType.Transpotation);
     }
     @Override
     public ArrayList<Role> getRoleList() {
         return null;
-    }  
+    }
 }
-

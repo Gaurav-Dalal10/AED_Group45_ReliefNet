@@ -1,8 +1,16 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package UI.DoctorRole;
+
+import Model.Enterprise.Enterprise;
+import Model.Network.Network;
+import Model.Organization.DoctorOrg;
+import Model.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
 
 /**
  *
@@ -13,8 +21,19 @@ public class DoctorPanel extends javax.swing.JPanel {
     /**
      * Creates new form DoctorPanel
      */
-    public DoctorPanel() {
+    private JPanel userProcessContainer;
+    private DoctorOrg org;
+    private Enterprise ent;
+    private UserAccount ua;
+    private Network net;
+
+    public DoctorPanel(JPanel userProcessContainer, UserAccount acc, DoctorOrg org, Enterprise ent, Network net) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.org = org;
+        this.ent = ent;
+        this.ua = acc;
+        this.net = net;
     }
 
     /**
@@ -26,19 +45,109 @@ public class DoctorPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JM_btnHomePage = new javax.swing.JButton();
+        JM_btnNewCases = new javax.swing.JButton();
+        JM_jLabel1 = new javax.swing.JLabel();
+        JM_jLabel2 = new javax.swing.JLabel();
+        JM_jLabel3 = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(102, 73, 111));
+        setForeground(new java.awt.Color(102, 0, 102));
+
+        JM_btnHomePage.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        JM_btnHomePage.setForeground(new java.awt.Color(102, 73, 111));
+        JM_btnHomePage.setText("HomePage");
+        JM_btnHomePage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JM_btnHomePageActionPerformed(evt);
+            }
+        });
+
+        JM_btnNewCases.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        JM_btnNewCases.setForeground(new java.awt.Color(102, 73, 111));
+        JM_btnNewCases.setText("New Cases");
+        JM_btnNewCases.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JM_btnNewCasesActionPerformed(evt);
+            }
+        });
+
+        JM_jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        JM_jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        JM_jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JM_jLabel1.setText("Doctor Panel");
+
+        JM_jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/DoctorRole/doc.png"))); // NOI18N
+
+        JM_jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UI/DoctorRole/cases.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(360, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JM_jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JM_btnHomePage, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(259, 259, 259)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JM_btnNewCases, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(JM_jLabel3)))
+                        .addGap(352, 352, 352))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(JM_jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(447, 447, 447))))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {JM_btnHomePage, JM_btnNewCases});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(JM_jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(JM_jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                    .addComponent(JM_jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JM_btnNewCases, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JM_btnHomePage, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(350, 350, 350))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {JM_btnHomePage, JM_btnNewCases});
+
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JM_btnNewCasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_btnNewCasesActionPerformed
+        // TODO add your handling code here:
+        NewCasePanel newCasePanel = new NewCasePanel(userProcessContainer, ua, org, net, ent);
+        userProcessContainer.add("newCasePanel", newCasePanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_JM_btnNewCasesActionPerformed
+
+    private void JM_btnHomePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JM_btnHomePageActionPerformed
+        // TODO add your handling code here:
+        HomePagePanel homePagePanel = new HomePagePanel(userProcessContainer, ua, org, net, ent);
+        userProcessContainer.add("homePagePanel", homePagePanel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_JM_btnHomePageActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JM_btnHomePage;
+    private javax.swing.JButton JM_btnNewCases;
+    private javax.swing.JLabel JM_jLabel1;
+    private javax.swing.JLabel JM_jLabel2;
+    private javax.swing.JLabel JM_jLabel3;
     // End of variables declaration//GEN-END:variables
 }
